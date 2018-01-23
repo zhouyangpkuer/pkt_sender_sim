@@ -15,15 +15,6 @@ using namespace std;
 
 #define TSC_FREQ (2.5e9)
 
-inline unsigned long getTSC()
-{ 
-  unsigned int __a,__d;  
-  asm volatile("rdtsc" : "=a" (__a), "=d" (__d));  
-  unsigned long val= ((unsigned long)__a) | (((unsigned long)__d)<<32);  
-  return val;
-}
-
-
 
 always_inline u64
 get_tsc_cycles (void)
